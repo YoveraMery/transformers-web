@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Transformers IA – Resumen y Preguntas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Transformers IA 2017 ✨</h1>
+        <p>Sube un PDF o pega texto y genera un resumen y preguntas automáticamente.</p>
+    </header>
+
+    <main class="container">
+        <!-- BLOQUE TEXTO -->
+        <section class="card">
+            <h2>1. Ingresar texto</h2>
+            <textarea id="inputText" placeholder="Pega aquí tu texto..."></textarea>
+            <div class="controls">
+                <label for="numQuestionsText">N° de preguntas:</label>
+                <input type="number" id="numQuestionsText" min="1" max="10" value="5">
+                <button id="btnProcessText">Resumir y generar preguntas</button>
+                <button id="btnClear" type="button" class="secondary">Limpiar</button>
+            </div>
+        </section>
+
+        <!-- BLOQUE PDF -->
+        <section class="card">
+            <h2>2. Subir PDF</h2>
+            <input type="file" id="pdfInput" accept="application/pdf">
+            <div class="controls">
+                <label for="numQuestionsPdf">N° de preguntas:</label>
+                <input type="number" id="numQuestionsPdf" min="1" max="10" value="5">
+                <button id="btnProcessPdf">Procesar PDF</button>
+            </div>
+            <small>El backend en Python extraerá el texto del PDF (versión ligera).</small>
+        </section>
+
+        <!-- SALIDA RESUMEN -->
+        <section class="card output-card">
+            <h2>📌 Resumen</h2>
+            <div id="summaryOutput" class="output-box">
+                <em>El resumen aparecerá aquí...</em>
+            </div>
+        </section>
+
+        <!-- SALIDA PREGUNTAS -->
+        <section class="card output-card">
+            <h2>❓ Preguntas generadas</h2>
+            <ol id="questionsOutput" class="output-box">
+                <!-- Preguntas aquí -->
+            </ol>
+        </section>
+
+        <div id="loader" class="loader hidden">
+            Procesando con Transformers IA... ⏳
+        </div>
+
+        <div id="errorBox" class="error hidden"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto educativo – Transformers IA (2017) aplicado a resumen y generación de preguntas.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
